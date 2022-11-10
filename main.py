@@ -8,7 +8,6 @@ import services
 import controllers.users
 
 app = FastAPI()
-
 app.include_router(controllers.users.router)
 
 
