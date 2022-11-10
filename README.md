@@ -1,12 +1,16 @@
 # minimal jr. rest api dev expectations
 
-this repo is a simple example of what i'd expect a dev coming into industry to be
-able to work with.
+this repo is a simple example of what i'd expect a dev coming into industry to
+be able to work with. while inevitably biased to my experience, i aim to be
+general in my expectations & advice.
 
-while inevitably biased to my experience, i aim to be general in my expectations.
+don't worry about perfecting your understanding of the individual pieces - learn
+enough of each piece to be able to use it's core features. understanding the
+inner clockwork of how all the parts work under the hood will come with experience.
 
-you're not expected to understand the inner clockwork of how all the parts fit
-together - the key point is that you're able to work with the codebase.
+the key point is that you're able to work with the codebase, and are able to
+build upon it to ship new features and ultimately deliver some value to the
+end users of the api.
 
 you should have a general/layman's understanding of the following concepts:
 1. git repositories, branches, pull requests, and commits
@@ -18,7 +22,12 @@ you should have a general/layman's understanding of the following concepts:
 1. shell scripting (bash)
 1. environmental variables
 
-this project is a minimalistic user management rest api serving json content.
+these are all standardized tools & concepts which allow us to more easily
+develop our saas applications.
+
+# the project
+
+this is a stateless rest api serving json content over http/1.1.
 
 currently, it only implements two endpoints;
 - `POST /users` - create a new user
@@ -26,6 +35,8 @@ currently, it only implements two endpoints;
 
 with the skills described above, you should be able to ship new features
 end-to-end, such as deleting users, updating users, or searching for users.
+
+a more advanced feature could be session management.
 
 # setup
 ```sh
@@ -54,8 +65,9 @@ sudo service mysql start
 
 # disclaimer
 
-this code is intentionally made to be simple, and a real work environment will
-(most likely) have much more of a complex codebase in inconsistent styles.
+this code is intentionally made to be simple & consistent to keep you focused on
+building the application itself. a real work environment will (most likely) have
+much more of a complex codebase, and likely not this level of consistency.
 
 you're expected to understand the fundamentals of this project - but you should
 expect to realistically be working in less ideal & consistent environments.
