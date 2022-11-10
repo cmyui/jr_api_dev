@@ -1,0 +1,6 @@
+aiomysql
+bcrypt
+fastapi
+databases
+python-dotenv
+uvicorn
