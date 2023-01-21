@@ -1,5 +1,4 @@
-source .env
-
+#!/usr/bin/env bash
 mysql \
     --host=$DB_HOST \
     --port=$DB_PORT \

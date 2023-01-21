@@ -1,5 +1,6 @@
 aiomysql
 bcrypt
+cryptography
 fastapi
 databases
 python-dotenv
