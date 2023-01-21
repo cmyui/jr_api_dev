@@ -1,5 +1,4 @@
-source .env
-
+#!/usr/bin/env bash
 MIGRATIONS_PATH=migrations
 MIGRATIONS_SCHEMA_TABLE=schema_migrations
 
@@ -8,25 +7,25 @@ DB_DSN="mysql://${DB_USER}:${DB_PASS}@tcp(${DB_HOST}:${DB_PORT})/${DB_NAME}?x-mi
 
 case "$1" in
     "up")
-        migrate \
+        go-migrate \
             -path ${MIGRATIONS_PATH} \
             -database "${DB_DSN}" \
             up
         ;;
     "down")
-        migrate \
+        go-migrate \
             -path ${MIGRATIONS_PATH} \
             -database "${DB_DSN}" \
             down
         ;;
     "version")
-        migrate \
+        go-migrate \
             -path ${MIGRATIONS_PATH} \
             -database "${DB_DSN}" \
             version
         ;;
     "force")
-        migrate \
+        go-migrate \
             -path ${MIGRATIONS_PATH} \
             -database "${DB_DSN}" \
             force $2
@@ -36,7 +35,7 @@ case "$1" in
         raw_input=$@
         lower_input=${raw_input,,}
         lower_snake_case_input=${lower_input// /_}
-        migrate create \
+        go-migrate create \
             -seq \
             -ext sql \
             -dir ${MIGRATIONS_PATH} \

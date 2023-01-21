@@ -1,0 +1,34 @@
+version: "3.3"
+
+services:
+  ## shared/managed services
+
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=lol123
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    # ports:
+    #   - 3306:3306
+
+  ## application services
+
+  jr_dev_api:
+    image: jr_dev_api:latest
+    ports:
+      - 10000:80
+    environment:
+      - APP_HOST=${APP_HOST}
+      - APP_PORT=${APP_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+    volumes:
+      - ./mount:/srv/root
+      - ./scripts:/scripts
+    depends_on:
+      - mysql
