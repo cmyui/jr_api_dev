@@ -17,6 +17,7 @@ you should have a general/layman's understanding of the following concepts:
 1. project structure (usecases, repositories, endpoints, services, settings)
 1. basic http & rest semantics (methods, status codes, headers, body, query params)
 1. relational (sql) databases, and migrations
+1. virtualization of software components through docker & docker-compose
 1. virtual envrionments for dependency management
 1. unit & integration test driven development
 1. shell scripting (bash)
@@ -53,14 +54,11 @@ pip install -r requirements.txt
 cp .env.example .env
 nano .env
 
-# start your mysql server
-sudo service mysql start
+# build the api
+make build
 
-# create the database
-./scripts/create-db.sh
-
-# start the server
-./scripts/start.sh
+# start the api & backing services
+make run
 ```
 
 # disclaimer
