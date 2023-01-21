@@ -13,10 +13,10 @@ build upon it to ship new features and ultimately deliver some value to the
 end users of the api.
 
 you should have a general/layman's understanding of the following concepts:
-1. git repositories, branches, pull requests, and commits
-1. project structure (usecases, repositories, endpoints, services, settings)
+1. git repositories, branches, commits, and pull requests
+1. project structure (usecases, repositories, controllers, services, settings)
 1. basic http & rest semantics (methods, status codes, headers, body, query params)
-1. relational (sql) databases, and migrations
+1. basic usage of relational databases (sql), and migrations
 1. virtualization of software components through docker & docker-compose
 1. virtual envrionments for dependency management
 1. unit & integration test driven development
